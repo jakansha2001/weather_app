@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            height: size.height * 0.75,
+            width: size.width,
+            margin: const EdgeInsets.only(
+              left: 12,
+              right: 15,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(40),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
