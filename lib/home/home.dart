@@ -12,10 +12,10 @@ class Home extends StatelessWidget {
           Container(
             height: size.height * 0.75,
             width: size.width,
-            margin: const EdgeInsets.only(
-              left: 12,
-              right: 15,
-            ),
+            // margin: const EdgeInsets.only(
+            //   left: 15,
+            //   right: 15,
+            // ),
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(40),
