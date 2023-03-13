@@ -13,7 +13,14 @@ class Home extends StatelessWidget {
             height: size.height * 0.75,
             width: size.width,
             decoration: const BoxDecoration(
-              color: Colors.red,
+              gradient: LinearGradient(
+                  colors: [
+                    Color(0xff3fa2fa),
+                    Color(0xff955cd1),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.2, 0.85]),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(40),
                 bottomRight: Radius.circular(40),
