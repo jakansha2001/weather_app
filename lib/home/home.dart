@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/home/widgets/extensive_weather_info.dart';
+import 'package:weather_app/home/widgets/weather_info.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -112,61 +114,44 @@ class Home extends StatelessWidget {
                 )
               ],
             ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class WeatherInfo extends StatelessWidget {
-  const WeatherInfo({
-    super.key,
-    required this.size,
-    required this.img,
-    required this.value,
-    required this.type,
-    this.color,
-  });
-
-  final Size size;
-  final String img;
-  final String value;
-  final String type;
-  final Color? color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          Image.asset(
-            img,
-            color: color,
-            width: size.width * 0.12,
           ),
           const SizedBox(
-            height: 15,
+            height: 40,
           ),
-          Text(
-            value,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Hubballi',
+          Expanded(
+            child: Row(
+              children: const [
+                ExtensiveWeatherInfo(
+                  type: 'Gust',
+                  value: '32.0 kp/h',
+                ),
+                ExtensiveWeatherInfo(
+                  type: 'UV',
+                  value: '1.0',
+                ),
+                ExtensiveWeatherInfo(
+                  type: 'Wind',
+                  value: '19.1 km/h',
+                ),
+              ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          Text(
-            type,
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: 'Hubballi',
-              color: Colors.white.withOpacity(0.6),
-              fontWeight: FontWeight.bold,
+          Expanded(
+            child: Row(
+              children: const [
+                ExtensiveWeatherInfo(
+                  type: 'Pressure',
+                  value: '1025.0 hpa',
+                ),
+                ExtensiveWeatherInfo(
+                  type: 'Precipitation',
+                  value: '0.0 mm',
+                ),
+                ExtensiveWeatherInfo(
+                  type: 'Last Update',
+                  value: '2023-03-03',
+                ),
+              ],
             ),
           ),
         ],
